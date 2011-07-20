@@ -2,6 +2,7 @@ package br.com.video.controller;
 
 import br.com.caelum.vraptor.Resource;
 import br.com.video.bo.InterfaceBO;
+import br.com.video.bo.UserBO;
 import br.com.video.entity.User;
 
 
@@ -15,11 +16,10 @@ import br.com.video.entity.User;
 public class UserController {
 
 	// parametro que sera a referencia para o BO dos usuarios.
-	private InterfaceBO<User> userBO;
+	private final InterfaceBO<User> userBO;
 	
 	// CONSTRUTOR
 	public UserController(InterfaceBO<User> userBO){
-		System.out.println("Construi o UserController");
 		this.userBO = userBO;
 	}
 
@@ -27,10 +27,10 @@ public class UserController {
 	public InterfaceBO<User> getUserBO() {
 		return userBO;
 	}
-
-	public void setUserBO(InterfaceBO<User> userBO) {
-		this.userBO = userBO;
-	}
 	
 	// DEMAIS METODOS
+	public void messageTest(){
+		System.out.println("Testando cricao do userbo.");
+		((UserBO)userBO).message();
+	}
 }

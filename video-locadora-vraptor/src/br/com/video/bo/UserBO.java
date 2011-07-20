@@ -18,7 +18,6 @@ public class UserBO implements InterfaceBO<User> {
 	
 	// CONSTRUTOR
 	public UserBO(InterfaceDAO<User> userDao){
-		System.out.println("Construi o UserBO");
 		this.userDao = userDao;
 	}
 	
@@ -32,5 +31,9 @@ public class UserBO implements InterfaceBO<User> {
 	public List<User> consult(User user) {
 		System.out.println("Funcionou!");
 		return null;
+	}
+	
+	public void message(){
+		System.out.println("Estou no userbo.");
 	}
 }

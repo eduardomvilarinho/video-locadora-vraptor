@@ -15,7 +15,6 @@ public class UserDAO implements InterfaceDAO<User> {
 	private final Session session;
 
 	public UserDAO(Session session) {
-		System.out.println("Construi o UserDAO");
 		this.session = session;
 	}
 	
