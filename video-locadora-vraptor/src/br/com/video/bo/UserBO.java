@@ -2,6 +2,7 @@ package br.com.video.bo;
 
 import java.util.List;
 
+import br.com.caelum.vraptor.ioc.Component;
 import br.com.video.dao.InterfaceDAO;
 import br.com.video.entity.User;
 
@@ -11,12 +12,14 @@ import br.com.video.entity.User;
  * @author johny
  *
  */
+@Component
 public class UserBO implements InterfaceBO<User> {
 
-	private InterfaceDAO<User> userDao;
+	private final InterfaceDAO<User> userDao;
 	
 	// CONSTRUTOR
 	public UserBO(InterfaceDAO<User> userDao){
+		System.out.println("Construi o UserBO");
 		this.userDao = userDao;
 	}
 	
@@ -25,13 +28,10 @@ public class UserBO implements InterfaceBO<User> {
 		return userDao;
 	}
 
-	public void setUserDao(InterfaceDAO<User> userDao) {
-		this.userDao = userDao;
-	}
-
 	// DEMAIS METODOS
 	@Override
 	public List<User> consult(User user) {
+		System.out.println("Funcionou!");
 		return null;
 	}
 }
